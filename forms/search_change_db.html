@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Редактировать</title>
+	<script language="JavaScript">
+	<!--
+	 
+	function CheckForm(UserForm)
+	{
+		var is_ok = true;
+
+		const forms = [UserForm.text_change,UserForm.text_equal];
+		const answers = ["какой текст изменить", "на что изменить"];
+		for (var i = 0; i < forms.length; i++) {
+			if (forms[i].value == '')
+			{
+				is_ok = false;
+				alert("Введите " + answers[i] + "!!");
+				forms[i].focus();
+			}
+			if (is_ok == false){
+				break;
+			}
+		};
+		
+		
+	 
+		return is_ok;
+	} 
+	// -->
+	</script>
+</head>
+<body>
+	<form name="update" action="../php/update.php" method="GET" onSubmit = "return CheckForm(this)">
+		<div>
+			Редактировать 
+			<select name="select_change">
+				<option value="data">data</option>
+				<option value="email">email</option>
+				<option value="url">url</option>
+				<option value="phone">phone</option>
+				<option value="age">age</option>
+				<option value="color">color</option>
+				<option value="public_key">public_key</option>
+				<option value="city">city</option>
+				<option value="password">password</option>
+				<option value="description">description</option>
+			</select>
+			на
+			<input type="txt" name="text_change" />
+			где
+			<select name="select_equal">
+				<option value="data">data</option>
+				<option value="email">email</option>
+				<option value="url">url</option>
+				<option value="phone">phone</option>
+				<option value="age">age</option>
+				<option value="color">color</option>
+				<option value="public_key">public_key</option>
+				<option value="city">city</option>
+				<option value="password">password</option>
+				<option value="description">description</option>
+			</select>
+			=
+			<input type="txt" name="text_equal" />
+		</div>
+		<input type="submit" name="Submit" value="Submit" >
+		<input type="reset" value="Reset"> 
+	</form>
+	<a href="../index.html">Главная</a><br>
+</body>
+</html>

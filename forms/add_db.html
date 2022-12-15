@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Add</title>
+	<script language="JavaScript">
+	<!--
+	 
+	function CheckForm(UserForm)
+	{
+		var is_ok = true;
+
+		const forms = [UserForm._data,UserForm._email,UserForm._url,UserForm._phone,UserForm._age,UserForm._color,UserForm._public_key,UserForm._city,UserForm._password,UserForm._description];
+		const answers = ["дату", "email", "url", "телефон", "возраст", "цвет", "публичный ключ", "город", "пароль", "описание"];
+		for (var i = 0; i < forms.length; i++) {
+			if (forms[i].value == '')
+			{
+				is_ok = false;
+				alert("Введите " + answers[i] + "!!");
+				forms[i].focus();
+			}
+			if (is_ok == false){
+				break;
+			}
+		};
+		
+		
+	 
+		return is_ok;
+	} 
+	// -->
+	</script>
+</head>
+<body>
+	<form name="add" action="../php/add_db.php" method="GET" onSubmit = "return CheckForm(this)">
+		<div>
+			Data: <input type="datetime-local" name="_data" /><br/>
+			Email: <input type="email" name="_email"/ ><br/>
+			url: <input type="url" name="_url" /><br/>
+			phone: <input type="tel" name="_phone" /><br/>
+			age: <input type="number" name="_age" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/><br/>
+			color: <input type="color" name="_color" /><br/>
+			public_key: <input type="txt" name="_public_key" /><br/>
+			city: <input type="txt" name="_city" /><br/>
+			password: <input type="password" name="_password" /><br/>
+			description: <input type="txt" name="_description" /><br/>
+		</div>
+		<input type="submit" name="Submit" value="Submit" >
+		<input type="reset" value="Reset"> 
+	</form>
+	<a href="../index.html">Главная</a><br>
+</body>
+</html>
